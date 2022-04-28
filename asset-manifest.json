@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/LinksListWeb/static/css/main.5cb59293.chunk.css",
+    "main.js": "/LinksListWeb/static/js/main.412b3620.chunk.js",
+    "main.js.map": "/LinksListWeb/static/js/main.412b3620.chunk.js.map",
+    "runtime-main.js": "/LinksListWeb/static/js/runtime-main.2b25572a.js",
+    "runtime-main.js.map": "/LinksListWeb/static/js/runtime-main.2b25572a.js.map",
+    "static/css/2.1f407f2d.chunk.css": "/LinksListWeb/static/css/2.1f407f2d.chunk.css",
+    "static/js/2.52532cb5.chunk.js": "/LinksListWeb/static/js/2.52532cb5.chunk.js",
+    "static/js/2.52532cb5.chunk.js.map": "/LinksListWeb/static/js/2.52532cb5.chunk.js.map",
+    "index.html": "/LinksListWeb/index.html",
+    "static/css/2.1f407f2d.chunk.css.map": "/LinksListWeb/static/css/2.1f407f2d.chunk.css.map",
+    "static/css/main.5cb59293.chunk.css.map": "/LinksListWeb/static/css/main.5cb59293.chunk.css.map",
+    "static/js/2.52532cb5.chunk.js.LICENSE.txt": "/LinksListWeb/static/js/2.52532cb5.chunk.js.LICENSE.txt",
+    "static/media/style.css": "/LinksListWeb/static/media/et-line.d59b2385.woff",
+    "static/media/font-awesome.min.css": "/LinksListWeb/static/media/fontawesome-webfont.f691f37e.woff",
+    "static/media/paddy.c8ec9f08.jpg": "/LinksListWeb/static/media/paddy.c8ec9f08.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2b25572a.js",
+    "static/css/2.1f407f2d.chunk.css",
+    "static/js/2.52532cb5.chunk.js",
+    "static/css/main.5cb59293.chunk.css",
+    "static/js/main.412b3620.chunk.js"
+  ]
+}
