@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Location, Redirect } from '@reach/router';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ScrollToTopBtn from './menu/ScrollToTop';
 import LinksList from './pages/linksList';
 import HomePage from './pages/homePage';
@@ -13,33 +13,21 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 export const ScrollTop = ({ children, location }) => {
-  React.useEffect(() => window.scrollTo(0,0), [location])
+  React.useEffect(() => window.scrollTo(0, 0), [location])
   return children
 }
 
-const PosedRouter = ({ children }) => (
-  <Location>
-    {({ location }) => (
-      <div id='routerhang'>
-        <div key={location.key}>
-          <Router location={location}>
-            {children}
-          </Router>
-        </div>
-      </div>
-    )}
-  </Location>
-);
-
-const app= () => (
+const app = () => (
   <div className="wraper">
-  <GlobalStyles />
-      <PosedRouter>
+    <GlobalStyles />
+    <BrowserRouter>
       <ScrollTop path="/">
-        <HomePage path="/" />
-        <LinksList path="/*" />
-        </ScrollTop>
-      </PosedRouter>
+        <Routes >
+          <Route exact path="/" element={<HomePage />} />
+          <Route exact path="/*" element={<LinksList />} />
+        </Routes >
+      </ScrollTop>
+    </BrowserRouter>
     <ScrollToTopBtn />
   </div>
 );
