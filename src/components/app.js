@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, HashRouter } from 'react-router-dom';
 import ScrollToTopBtn from './menu/ScrollToTop';
 import LinksList from './pages/linksList';
 import HomePage from './pages/homePage';
@@ -20,14 +20,14 @@ export const ScrollTop = ({ children, location }) => {
 const app = () => (
   <div className="wraper">
     <GlobalStyles />
-    <BrowserRouter>
+    <HashRouter>
       <ScrollTop path="/">
         <Routes >
           <Route exact path="/" element={<HomePage />} />
           <Route exact path="/*" element={<LinksList />} />
         </Routes >
       </ScrollTop>
-    </BrowserRouter>
+    </HashRouter>
     <ScrollToTopBtn />
   </div>
 );
