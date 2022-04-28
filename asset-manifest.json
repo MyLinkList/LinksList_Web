@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "./static/css/main.5cb59293.chunk.css",
-    "main.js": "./static/js/main.412b3620.chunk.js",
-    "main.js.map": "./static/js/main.412b3620.chunk.js.map",
-    "runtime-main.js": "./static/js/runtime-main.3f6fe904.js",
-    "runtime-main.js.map": "./static/js/runtime-main.3f6fe904.js.map",
-    "static/css/2.d21a6fa9.chunk.css": "./static/css/2.d21a6fa9.chunk.css",
-    "static/js/2.c2c55d26.chunk.js": "./static/js/2.c2c55d26.chunk.js",
-    "static/js/2.c2c55d26.chunk.js.map": "./static/js/2.c2c55d26.chunk.js.map",
-    "index.html": "./index.html",
-    "static/css/2.d21a6fa9.chunk.css.map": "./static/css/2.d21a6fa9.chunk.css.map",
-    "static/css/main.5cb59293.chunk.css.map": "./static/css/main.5cb59293.chunk.css.map",
-    "static/js/2.c2c55d26.chunk.js.LICENSE.txt": "./static/js/2.c2c55d26.chunk.js.LICENSE.txt",
-    "static/media/style.css": "./static/media/et-line.d59b2385.woff",
-    "static/media/font-awesome.min.css": "./static/media/fontawesome-webfont.f691f37e.woff",
-    "static/media/paddy.c8ec9f08.jpg": "./static/media/paddy.c8ec9f08.jpg"
+    "main.css": "/static/css/main.5cb59293.chunk.css",
+    "main.js": "/static/js/main.137de4b5.chunk.js",
+    "main.js.map": "/static/js/main.137de4b5.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.d58e1f42.js",
+    "runtime-main.js.map": "/static/js/runtime-main.d58e1f42.js.map",
+    "static/css/2.a76fb328.chunk.css": "/static/css/2.a76fb328.chunk.css",
+    "static/js/2.d960888c.chunk.js": "/static/js/2.d960888c.chunk.js",
+    "static/js/2.d960888c.chunk.js.map": "/static/js/2.d960888c.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.a76fb328.chunk.css.map": "/static/css/2.a76fb328.chunk.css.map",
+    "static/css/main.5cb59293.chunk.css.map": "/static/css/main.5cb59293.chunk.css.map",
+    "static/js/2.d960888c.chunk.js.LICENSE.txt": "/static/js/2.d960888c.chunk.js.LICENSE.txt",
+    "static/media/style.css": "/static/media/et-line.d59b2385.woff",
+    "static/media/font-awesome.min.css": "/static/media/fontawesome-webfont.f691f37e.woff",
+    "static/media/paddy.c8ec9f08.jpg": "/static/media/paddy.c8ec9f08.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.3f6fe904.js",
-    "static/css/2.d21a6fa9.chunk.css",
-    "static/js/2.c2c55d26.chunk.js",
+    "static/js/runtime-main.d58e1f42.js",
+    "static/css/2.a76fb328.chunk.css",
+    "static/js/2.d960888c.chunk.js",
     "static/css/main.5cb59293.chunk.css",
-    "static/js/main.412b3620.chunk.js"
+    "static/js/main.137de4b5.chunk.js"
   ]
 }
