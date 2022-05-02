@@ -1,8 +1,10 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, HashRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, HashRouter, useParams } from 'react-router-dom';
 import ScrollToTopBtn from './menu/ScrollToTop';
 import LinksList from './pages/linksList';
+import Paddy from './pages/paddy';
 import HomePage from './pages/homePage';
+import Header from './menu/header';
 
 import { createGlobalStyle } from 'styled-components';
 
@@ -20,11 +22,13 @@ export const ScrollTop = ({ children, location }) => {
 const app = () => (
   <div className="wraper">
     <GlobalStyles />
+    <Header/>
     <HashRouter>
       <ScrollTop path="/">
         <Routes >
           <Route exact path="/" element={<HomePage />} />
-          <Route exact path="/*" element={<LinksList />} />
+          <Route path="/:identifier" element={<LinksList/>} />
+
         </Routes >
       </ScrollTop>
     </HashRouter>
