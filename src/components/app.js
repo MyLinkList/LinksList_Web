@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, HashRouter, useParams } from 'react-router-dom';
 import ScrollToTopBtn from './menu/ScrollToTop';
 import LinksList from './pages/linksList';
-import Paddy from './pages/paddy';
+import Demo from './pages/Demo';
 import HomePage from './pages/homePage';
 import Header from './menu/header';
 
@@ -22,13 +22,14 @@ export const ScrollTop = ({ children, location }) => {
 const app = () => (
   <div className="wraper">
     <GlobalStyles />
-    <Header/>
+
     <HashRouter>
+    <Header/>
       <ScrollTop path="/">
         <Routes >
           <Route exact path="/" element={<HomePage />} />
           <Route path="/:identifier" element={<LinksList/>} />
-
+          <Route path="/test/demo" element={<Demo/>} />
         </Routes >
       </ScrollTop>
     </HashRouter>

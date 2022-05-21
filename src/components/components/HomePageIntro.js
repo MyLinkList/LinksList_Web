@@ -1,7 +1,7 @@
 import React from 'react';
 import Reveal from 'react-awesome-reveal';
 import { keyframes } from "@emotion/react";
-import Logo from '../../assets/img/Logo-01.png';
+import Logo from '../../assets/img/Logo-02.png';
 const fadeInUp = keyframes`
   0% {
     opacity: 0;
@@ -27,40 +27,24 @@ const inline = keyframes`
 `;
 
 const homePageIntro = () => (
-  <div className="container">
-    <div className="row align-items-center">
-      <div className="col-md-6">
-        <div className="spacer-single"></div>
+  <div className="container" style={{ justifyContent: 'center',
+  alignItems: 'center',
+  textAlign: 'center' }}>
 
-        <Reveal className='onStep' keyframes={fadeInUp} delay={300} duration={900} triggerOnce>
-        <h6> <span className="text-uppercase color">LinksList.io</span></h6>
 
-        </Reveal>
-        <Reveal className='onStep' keyframes={fadeInUp} delay={600} duration={900} triggerOnce>
-          <p className="lead col-white">
-          <h1 className="col-white">Create your Web3 Bio Link.</h1>
-          </p>
-        </Reveal>
-        <div className="spacer-10"></div>
+      <Reveal className='onStep' keyframes={fadeInUp} delay={300} duration={1200} triggerOnce>
+        <img src={Logo} alt="" style={{ width: "50vh", height: "40vh", cursor: 'pointer' }}/>
+      </Reveal>
 
-      </div>
-      <div className="col-md-6 xs-hide">
-        <Reveal className='onStep d-inline' keyframes={inline} delay={300} duration={1200} triggerOnce>
-          {/* <img src={Logo}  alt="" height="200vh"  /> */}
-          <img src={Logo}  className="lazy img-fluid" alt=""/>
-        </Reveal>
-      </div>
+      <Reveal className='onStep' keyframes={fadeInUp} delay={600} duration={900} triggerOnce>
+        <h3 className="col-white">Create your Web3 Bio Link.</h3>
+      </Reveal>
 
-      {/* <section className='container no-top no-bottom'>
-        <div className='row'>
-          <div className="spacer-double"></div>
-          <div className='col-lg-12 mb-2'>
-            <h2>New Items</h2>
-          </div>
-        </div>
+      <Reveal className='onStep' keyframes={fadeInUp} delay={600} duration={900} triggerOnce>
+        <h4 className="col-white">One page serving all your online personas.</h4>
+      </Reveal>
 
-      </section> */}
-    </div>
+
   </div>
 );
 export default homePageIntro;

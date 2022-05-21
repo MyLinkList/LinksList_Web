@@ -3017,10 +3017,13 @@ img.img-rounded{
 /*** wallet ***/
 .greyscheme .box-url {
     position: relative;
-    padding: 30px;
+    padding: 20px;
     color: #a2a2a2;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     background: rgba(255,255,255,.03);
-    border:1px solid rgba(255, 255, 255, .1);
+    border:1px solid rgba(253, 3, 3, 0.247);
     display: block;
     border-radius: 20px;
     box-shadow: 1px 1px 8px 1px rgba(0,0,0,0.1);
@@ -3037,10 +3040,13 @@ img.img-rounded{
       padding: 2px 10px;
       background: rgba(255,255,255,0.1);
       border-radius: 8px;
+      align-items: center;
     }
 }
 .mb30 {
     margin-bottom: 30px;
+    align-items: center;
+    justify-content: center;
 }
 .mb20 {
     margin-bottom: 20px;
@@ -3178,6 +3184,7 @@ img.img-rounded{
 .greyscheme .sequence{
   .mb30 {
     margin-bottom: 30px;
+    align-items: center;
   }
   .pricing-s1 {
     overflow: hidden;

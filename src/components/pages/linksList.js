@@ -4,7 +4,7 @@ import {
 } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { StyledHeader } from '../Styles';
-import paddy from '../../assets/img/paddy.jpg';
+import paddy from '../../assets/img/Logo-01-notext.png';
 import { getWalletAddressFromBlockFrost } from '../utils/blockfrost';
 import { LinksListObj } from '../objects/LinksListLinkObj';
 import { LinksListAccountObj } from '../objects/LinksListAccountObj copy';

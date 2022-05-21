@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Breakpoint, { BreakpointProvider, setDefaultBreakpoints } from "react-socks";
 //import { header } from 'react-bootstrap';
-import { Link } from '@reach/router';
+import { Link } from 'react-router-dom';
 import useOnclickOutside from "react-cool-onclickoutside";
 
 import Logo from '../../assets/img/Logo-01-notext.png';
@@ -11,18 +11,18 @@ setDefaultBreakpoints([
   { xl: 1200 }
 ]);
 
-const NavLink = props => (
-  <Link
-    {...props}
-    getProps={({ isCurrent }) => {
-      // the object returned here is passed to the
-      // anchor element's props
-      return {
-        className: isCurrent ? 'active' : 'non-active',
-      };
-    }}
-  />
-);
+// const NavLink = props => (
+//   <Link
+//     {...props}
+//     getProps={({ isCurrent }) => {
+//       // the object returned here is passed to the
+//       // anchor element's props
+//       return {
+//         className: isCurrent ? 'active' : 'non-active',
+//       };
+//     }}
+//   />
+// );
 
 
 
@@ -111,16 +111,24 @@ const Header = function ({ className }) {
   return (
     <header className={`navbar white ${className}`} id="myHeader">
       <div className='container'>
-        <div className='row w-100-nav'>
+        <div className='row w-100-nav' style={{
+          justifyContent: 'center',
+          alignItems: 'center',
+          textAlign: 'center'
+        }}>
           <div className='logo px-0'>
             <div className='navbar-title navbar-item'>
-              <NavLink to="/">
+              <Link to="/" target="_self" rel="noopener noreferrer">
                 <img
                   src={Logo}
-                  style={{ width: "5vh", height: "5vh", cursor: 'pointer' }}
+                  style={{ width: "3vh", height: "3vh", cursor: 'pointer' }}
                 />
-              </NavLink>
+                <h5 className="text" style={{ "color": "white" }}> LinksList.io</h5>
+              </Link>
+
             </div>
+
+
           </div>
 
           <BreakpointProvider>
@@ -135,7 +143,7 @@ const Header = function ({ className }) {
                       {openMenu && (
                         <div className='item-dropdown'>
                           <div className="dropdown" onClick={closeMenu}>
-                            <NavLink to="/">Coming Soon</NavLink>
+                            <Link to="/test/demo">Sample 1</Link>
                             {/* <NavLink to="/homeGrey">Pricing</NavLink>
                             <NavLink to="/">Help</NavLink>
                             <NavLink to="/home1">Mint</NavLink> */}
