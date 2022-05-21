@@ -3,8 +3,8 @@ import Breakpoint, { BreakpointProvider, setDefaultBreakpoints } from "react-soc
 //import { header } from 'react-bootstrap';
 import { Link } from '@reach/router';
 import useOnclickOutside from "react-cool-onclickoutside";
-import paddy from '../../assets/img/paddy.jpg';
 
+import Logo from '../../assets/img/Logo-01-notext.png';
 setDefaultBreakpoints([
   { xs: 0 },
   { l: 1199 },
@@ -116,7 +116,7 @@ const Header = function ({ className }) {
             <div className='navbar-title navbar-item'>
               <NavLink to="/">
                 <img
-                  src={paddy}
+                  src={Logo}
                   style={{ width: "5vh", height: "5vh", cursor: 'pointer' }}
                 />
               </NavLink>
@@ -135,9 +135,10 @@ const Header = function ({ className }) {
                       {openMenu && (
                         <div className='item-dropdown'>
                           <div className="dropdown" onClick={closeMenu}>
-                            <NavLink to="/homeGrey">Pricing</NavLink>
+                            <NavLink to="/">Coming Soon</NavLink>
+                            {/* <NavLink to="/homeGrey">Pricing</NavLink>
                             <NavLink to="/">Help</NavLink>
-                            <NavLink to="/home1">Mint</NavLink>
+                            <NavLink to="/home1">Mint</NavLink> */}
                           </div>
                         </div>
                       )}

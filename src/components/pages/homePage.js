@@ -1,6 +1,8 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
+import Particle from '../components/Particle';
+import HomePageIntro from '../components/HomePageIntro';
+import Footer from '../components/footer';
 //IMPORT DYNAMIC STYLED COMPONENT
 import { StyledHeader } from '../Styles';
 
@@ -10,17 +12,16 @@ const theme = 'GREYLOGIN'; //LIGHT, GREY, RETRO
 
 
 const HomePage = () => (
-  <div className="greyscheme">
-    <StyledHeader theme={theme} />
-    <br></br>
-    <br></br>
-    <br></br>
-    <div className='col-12'>
-      <h1 className='text-center'>Links List</h1>
-    </div>
+<div className="greyscheme">
+  <StyledHeader theme={theme} />
+      <section className="jumbotron no-bg relative" style={{backgroundImage: `url(${'./img/background/8.jpg'})`}}>
+       <Particle/>
+         <HomePageIntro/>
+      </section>
 
-    <h2 className='text-center'>The Decentralized Link</h2>
-    <h3 className='text-center'>List all your links under one link</h3>
+      
+
+    <Footer />
 
   </div>
 

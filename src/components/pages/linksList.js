@@ -24,20 +24,27 @@ const LinksList = ({ }) => {
       <StyledHeader theme={theme} />
       {linkslistAccount != null && linkslistAccount.accountName != '' &&
         <div>
-          <section className='container no-bottom'>
-            <div className='row'>
-              <div className="profile_avatar" style={{
-                justifyContent: 'center',
-                alignItems: 'center'
-              }}>
-                <img src={linkslistAccount.accoutImage} />
+          <section className='container'>
+            <div className='col-12'>
+              <div className='row'>
+                <div className="profile_avatar" style={{
+                  alignContent: 'center', justifyContent: 'center',
+                  alignItems: 'center',
+                  textAlign: 'center'
+                }}>
+                  <img src={linkslistAccount.accoutImage} />
+                </div>
+              </div>
+
+              <div className='row'>
                 {/* <i className="fa fa-check"></i> */}
-                <div className="profile_name">
+                <div className="profile_name" style={{
+                  alignContent: 'center', justifyContent: 'center',
+                  alignItems: 'center',
+                  textAlign: 'center'
+                }}>
                   <h4>
                     {linkslistAccount.accountName}
-                    <span className="profile_username">@PoolShamrock</span>
-                    <span id="wallet" className="profile_wallet">{linkslistAccount.walletAddress}</span>
-                    <button id="btn_copy" title="Copy Text">Copy</button>
                   </h4>
                 </div>
               </div>
@@ -45,9 +52,6 @@ const LinksList = ({ }) => {
           </section>
 
           <section className='container'>
-            <div className='col-12'>
-              <h1 className='text-center'>Links List</h1>
-            </div>
             <div className='row'>
 
               {linkslistAccount.links.map(function (item, key) {
@@ -55,7 +59,7 @@ const LinksList = ({ }) => {
                   <a href={item.url} target="_blank" rel="noreferrer">
                     <div className="col-lg-3 mb30" key={key}>
                       <span className="box-url">
-                        {item.image != null && <img src={item.image} style={{ width: "3vh", height: "3vh", cursor: 'pointer' }} />}                        
+                        {item.image != null && <img src={item.image} style={{ width: "3vh", height: "3vh", cursor: 'pointer' }} />}
                         <h4 aria-hidden="true" >{item.name}</h4>
                       </span>
                     </div>
