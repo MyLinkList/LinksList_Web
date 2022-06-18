@@ -1,8 +1,8 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, HashRouter, useParams } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, HashRouter, useParams } from 'react-router-dom';
 import ScrollToTopBtn from './menu/ScrollToTop';
 import LinksList from './pages/linksList';
-import Demo from './pages/Demo';
+import Paddy from './pages/paddy';
 import HomePage from './pages/homePage';
 import Header from './menu/header';
 
@@ -23,16 +23,16 @@ const app = () => (
   <div className="wraper">
     <GlobalStyles />
 
-    <HashRouter>
+    <Router>
     <Header/>
       <ScrollTop path="/">
         <Routes >
           <Route exact path="/" element={<HomePage />} />
-          <Route path="/:identifier" element={<LinksList/>} />
-          <Route path="/test/demo" element={<Demo/>} />
+          {/* <Route path="/:identifier" element={<LinksList/>} /> */}
+          <Route path="/paddy" element={<Paddy/>} />
         </Routes >
       </ScrollTop>
-    </HashRouter>
+    </Router>
     <ScrollToTopBtn />
   </div>
 );

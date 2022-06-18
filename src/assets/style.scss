@@ -49,7 +49,7 @@ $black_soft: #333;
 $black_col: #2e333c;
 $black_more: #0f0f0f;
 $color: #fc0b0b;
-$color_more: #403f83;
+$color_more: #fc0b0b;
 .col-white{
   color: $white;
 }
@@ -651,7 +651,7 @@ p.lead {
     width: max-content;
     text-align: center;
     color: #fff !important;
-    background: #015008;
+    background: #ff0042;
     border-radius: 6px;
     letter-spacing: normal;
     outline: 0;
@@ -664,7 +664,7 @@ p.lead {
     box-shadow: 2px 2px 20px 0px rgba(131, 100, 226, 0);
     transition: all 0.3s ease;
     &:hover{
-      box-shadow: 2px 2px 20px 0px rgba(238, 9, 9, 0.5);
+      box-shadow: 2px 2px 20px 0px rgba(250, 248, 248, 0.5);
       transition: all 0.3s ease;
     }
     &.inline{
@@ -3416,13 +3416,13 @@ img.img-rounded{
     position: relative;
     padding: 20px;
     background: $white;
-    border: solid 1px rgba(247, 16, 16, 0.2);
+    border: solid 1px rgba(248, 3, 3, 0.2);
     display: block;
     border-radius: 20px;
     box-shadow: 1px 1px 8px 1px rgba(0,0,0,0.1);
     transition: .3s;
     &:hover {
-      background: rgba(0,0,0,0.05);
+      background: rgb(114, 110, 110);
       transition: .3s;
     }
     .box-url-label {

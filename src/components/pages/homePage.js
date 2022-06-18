@@ -9,7 +9,6 @@ import Footer from '../components/footer';
 //IMPORT DYNAMIC STYLED COMPONENT
 import { StyledHeader } from '../Styles';
 
-import Sample1 from '../../assets/img/samples/Sample-01.png';
 //SWITCH VARIABLE FOR PAGE STYLE
 const theme = 'GREYLOGIN'; //LIGHT, GREY, RETRO
 

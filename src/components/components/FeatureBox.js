@@ -41,10 +41,10 @@ const featurebox= () => (
                 </Reveal>
                   <div className="text">
                     <Reveal className='onStep' keyframes={fadeInUp} delay={100} duration={600} triggerOnce>
-                      <h4 className="">Web 3 Domains</h4>
+                      <h4 className="">Web 3 Account</h4>
                     </Reveal>
                     <Reveal className='onStep' keyframes={fadeInUp} delay={200} duration={600} triggerOnce>
-                      <p className="">Use your LinksList Name, AdaHandle or Unstoppable domain as your account extension.</p>
+                      <p className="">LinksList Name, AdaHandle or Unstoppable domain as your extension.</p>
                     </Reveal>
                   </div>
                   <i className="wm icon_cloud-upload_alt"></i>
@@ -54,17 +54,17 @@ const featurebox= () => (
           <div className="col-lg-4 col-md-6 mb-3">
               <div className="feature-box f-boxed style-3">
                 <Reveal className='onStep' keyframes={fadeInUp} delay={0} duration={600} triggerOnce>
-                  <i className=" bg-color-2 i-boxed icon_tags_alt"></i>
+                  <i className=" bg-color-2 i-boxed icon_camera_alt"></i>
                 </Reveal>
                   <div className="text">
                     <Reveal className='onStep' keyframes={fadeInUp} delay={100} duration={600} triggerOnce>
                       <h4 className="">Profile picture</h4>
                     </Reveal>
                     <Reveal className='onStep' keyframes={fadeInUp} delay={200} duration={600} triggerOnce>
-                      <p className="">Upload a personalised profile picture one of your wallet NFT's</p>
+                      <p className="">Upload a personalised profile picture, or use one of your wallet NFT's</p>
                     </Reveal>
                   </div>
-                  <i className="wm icon_tags_alt"></i>
+                  <i className="wm icon_camera_alt"></i>
               </div>
           </div>
         </div>

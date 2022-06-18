@@ -33,15 +33,23 @@ const homePageIntro = () => (
 
 
       <Reveal className='onStep' keyframes={fadeInUp} delay={300} duration={1200} triggerOnce>
-        <img src={Logo} alt="" style={{ width: "50vh", height: "40vh", cursor: 'pointer' }}/>
+        <img src={Logo} alt="" style={{ width: "50vh", height: "35vh", cursor: 'pointer' }}/>
       </Reveal>
 
-      <Reveal className='onStep' keyframes={fadeInUp} delay={600} duration={900} triggerOnce>
-        <h3 className="col-white">Create your Web3 Bio Link.</h3>
+      <Reveal className='onStep' keyframes={fadeInUp} delay={500} duration={900} triggerOnce>
+        <h2 className="col-white">COMING SOON!</h2>
+        <br></br>
       </Reveal>
 
-      <Reveal className='onStep' keyframes={fadeInUp} delay={600} duration={900} triggerOnce>
-        <h4 className="col-white">One page serving all your online personas.</h4>
+      <Reveal className='onStep' keyframes={fadeInUp} delay={1200} duration={900} triggerOnce>
+        <h3 className="col-white">Create your Web3 Bio Link</h3>
+      </Reveal>
+
+      <Reveal className='onStep' keyframes={fadeInUp} delay={1600} duration={900} triggerOnce>
+        <h4 className="col-white">Share your - links - social media profiles - embedded music - video content</h4>
+      </Reveal>
+      <Reveal className='onStep' keyframes={fadeInUp} delay={1900} duration={900} triggerOnce>
+        <h5 className="col-white">Fully customise and style your bio</h5>
       </Reveal>
 
 

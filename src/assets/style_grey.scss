@@ -2799,6 +2799,14 @@ $color_more: #FC202C;
     margin: 0 auto;
     text-align: center;
 }
+
+.greyscheme .link_icon img {
+  border-radius: 100%;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  width: 150px;
+  height: auto;
+}
 .greyscheme .profile_avatar img {
     border-radius: 100%;
     -moz-border-radius: 100%;
@@ -3029,7 +3037,7 @@ img.img-rounded{
     box-shadow: 1px 1px 8px 1px rgba(0,0,0,0.1);
     transition: .3s;
     &:hover {
-      background: rgba(0,0,0,0.05);
+      background: rgba(252, 3, 3, 0.05);
       transition: .3s;
     }
     .box-url-label {
