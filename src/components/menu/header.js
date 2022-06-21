@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Breakpoint, { BreakpointProvider, setDefaultBreakpoints } from "react-socks";
 //import { header } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import useOnclickOutside from "react-cool-onclickoutside";
 import {
   Button,
@@ -19,7 +19,7 @@ import eternl from '../../assets/img/wallet/eternl.png';
 import typhon from '../../assets/img/wallet/typhon.png';
 import yoroi from '../../assets/img/wallet/yoroi.png';
 import gero from '../../assets/img/wallet/gerowallet.ico';
-
+import cardwallet from '../../assets/img/wallet/cardwallet.png';
 
 setDefaultBreakpoints([
   { xs: 0 },
@@ -30,7 +30,11 @@ setDefaultBreakpoints([
 
 const Header = function ({ className }) {
 
+  const navigate = useNavigate();
+
   const [openWalletModal, setOpenWalletModal] = React.useState(false);
+  const [connectedWallet, setConnectedWallet] = React.useState(null);
+  const [connectedWalletName, setConnectedWalletName] = React.useState(null);
 
   const [openMenu, setOpenMenu] = React.useState(false);
   const [openMenu1, setOpenMenu1] = React.useState(false);
@@ -38,61 +42,63 @@ const Header = function ({ className }) {
   const [openMenu3, setOpenMenu3] = React.useState(false);
 
 
-  const connectWallet = (wallet) => {
+  const connectWallet = async (walletName) => {
+    try {
+      var walletEnabled = null;
+      var cardano = window.cardano;
 
+      if (walletName === "Nami") {
+        walletEnabled = await cardano.nami.enable();
+      } else if (walletName === "Flint") {
+        walletEnabled = await cardano.flint.enable();
+      }
+      else if (walletName === "Eternl") {
+        walletEnabled = await cardano.eternl.enable();
+      }
+      else if (walletName === "Typhon") {
+        walletEnabled = await cardano.typhon.enable();
+      }
+      else if (walletName === "Gero") {
+        walletEnabled = await cardano.gerowallet.enable();
+      } else if (walletName === "CardWallet") {
+        walletEnabled = await cardano.cardwallet.enable();
+      }
+
+      if (walletEnabled) {
+        console.log("close modal");
+        setConnectedWallet(walletEnabled);
+        setOpenWalletModal(false);
+        setConnectedWalletName(walletName);
+
+        navigateUser();
+
+      }
+
+    } catch (error) {
+      console.log(error)
+    }
   }
+    //CHECK WALLET FOR LL ACCOUNT NFT
+  const navigateUser = () => {
+    //IF NO ACCOUNT 
+    navigate("/createaccount");
 
+    //IF ACCOUNT NAVIGATE TO BIO EDIT
+  };
 
-  const handleBtnClick1 = () => {
-    setOpenMenu1(!openMenu1);
-  };
-  const handleBtnClick2 = () => {
-    setOpenMenu2(!openMenu2);
-  };
-  const handleBtnClick3 = () => {
-    setOpenMenu3(!openMenu3);
-  };
   const closeMenu = () => {
     setOpenMenu(false);
-  };
-  const closeMenu1 = () => {
-    setOpenMenu1(false);
-  };
-  const closeMenu2 = () => {
-    setOpenMenu2(false);
-  };
-  const closeMenu3 = () => {
-    setOpenMenu3(false);
   };
 
   const ref = useOnclickOutside(() => {
     closeMenu();
   });
-  const ref1 = useOnclickOutside(() => {
-    closeMenu1();
-  });
-  const ref2 = useOnclickOutside(() => {
-    closeMenu2();
-  });
-  const ref3 = useOnclickOutside(() => {
-    closeMenu3();
-  });
 
-  const [showmenu, btn_icon] = useState(false);
-  const [showpop, btn_icon_pop] = useState(false);
-  const [shownot, btn_icon_not] = useState(false);
-  const closePop = () => {
-    btn_icon_pop(false);
-  };
-  const closeNot = () => {
-    btn_icon_not(false);
-  };
 
-  const toggle = modalType => () => {
+  const toggle = () => {
     console.log("Connect Wallet")
-    return this.setState({
-      modal: !this.state.modal,
-    });
+    setOpenWalletModal(!openWalletModal);
+    return openWalletModal;
   };
 
   useEffect(() => {
@@ -100,7 +106,7 @@ const Header = function ({ className }) {
     const totop = document.getElementById("scroll-to-top");
     const sticky = header.offsetTop;
     const scrollCallBack = window.addEventListener("scroll", () => {
-      btn_icon(false);
+
       if (window.pageYOffset > sticky) {
         header.classList.add("sticky");
         totop.classList.add("show");
@@ -176,9 +182,17 @@ const Header = function ({ className }) {
 
           <div className='mainside'>
             <div className="logout">
-              <button onClick={() => setOpenWalletModal(true)} id="walletButton" className="btn-main">
-                Connect Wallet
-              </button>
+              {connectedWallet == null ?
+                <button onClick={() => setOpenWalletModal(true)} id="walletButton" className="btn-main">
+                  Connect Wallet
+                </button>
+                :
+                <button onClick={() => setOpenWalletModal(true)} id="walletButton" className="btn-main">
+                  Connected: {connectedWalletName}
+                </button>
+              }
+
+
             </div>
           </div>
 
@@ -189,7 +203,6 @@ const Header = function ({ className }) {
 
       <Modal
         isOpen={openWalletModal}
-        toggle={false}
       >
         <ModalHeader toggle={toggle}>Select Wallet</ModalHeader>
         <ModalBody style={{
@@ -205,7 +218,7 @@ const Header = function ({ className }) {
           }}>
 
             <div className="col-lg-8" >
-              <span className="box-url" onClick={() => window.open("https://poolpeek.com")}>
+              <span className="box-url" onClick={() => connectWallet("Eternl")}>
                 <div>
                   <div className="row">
                     <div className="col-lg-2">
@@ -229,7 +242,7 @@ const Header = function ({ className }) {
             </div>
 
             <div className="col-lg-8" >
-              <span className="box-url" onClick={() => window.open("https://poolpeek.com")}>
+              <span className="box-url" onClick={() => connectWallet("Nami")}>
                 <div>
                   <div className="row">
                     <div className="col-lg-2">
@@ -253,7 +266,7 @@ const Header = function ({ className }) {
             </div>
 
             <div className="col-lg-8" >
-              <span className="box-url" onClick={() => window.open("https://poolpeek.com")}>
+              <span className="box-url" onClick={() => connectWallet("Flint")}>
                 <div>
                   <div className="row">
                     <div className="col-lg-2">
@@ -277,7 +290,7 @@ const Header = function ({ className }) {
             </div>
 
             <div className="col-lg-8" >
-              <span className="box-url" onClick={() => window.open("https://poolpeek.com")}>
+              <span className="box-url" onClick={() => connectWallet("Gero")}>
                 <div>
                   <div className="row">
                     <div className="col-lg-2">
@@ -301,7 +314,7 @@ const Header = function ({ className }) {
             </div>
 
             <div className="col-lg-8" >
-              <span className="box-url" onClick={() => window.open("https://poolpeek.com")}>
+              <span className="box-url" onClick={() => connectWallet("Typhon")}>
                 <div>
                   <div className="row">
                     <div className="col-lg-2">
@@ -324,11 +337,35 @@ const Header = function ({ className }) {
               </span>
             </div>
 
+            <div className="col-lg-8" >
+              <span className="box-url" onClick={() => connectWallet("CardWallet")}>
+                <div>
+                  <div className="row">
+                    <div className="col-lg-2">
+                      <img src={cardwallet} width={30} height={30} style={{
+                        justifyContent: 'left',
+                        alignItems: 'left'
+                      }} />
+                    </div>
+                    <div className="col-lg-8 ">
+                      <h6 aria-hidden="true" >Card Wallet</h6>
+                    </div>
+                    <div className="col-lg-2">
+                      <img src={cardwallet} width={30} height={30} style={{
+                        justifyContent: 'left',
+                        alignItems: 'left'
+                      }} />
+                    </div>
+                  </div>
+                </div>
+              </span>
+            </div>
+
           </div>
         </ModalBody>
         <ModalFooter>
           {' '}
-          <button onClick={() => setOpenWalletModal(true)} id="walletButton" className="btn-main">
+          <button onClick={() => setOpenWalletModal(false)} id="walletButton" className="btn-main">
             Close
           </button>
         </ModalFooter>
